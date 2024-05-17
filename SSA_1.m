@@ -74,3 +74,10 @@ legend("Original")
 subplot(2,1,2)
 plot(x.Date,sum(RC(:,1:3),2),'r-');
 legend('Reconstruction with RCs 1-3');
+
+fecha_formateada=datestr(x.Date, 'yyyy-mm-dd');
+DatosFinal=table(fecha_formateada,y2,'VariableNames',{'Fecha','Precio_Cierre'});
+writetable(DatosFinal,"SSA_datos.csv")
+
+
+
